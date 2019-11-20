@@ -111,12 +111,14 @@
             if(battleState.attacker==''){
                 battleState.attacker = r[0];
                 battleState[r[0]] = r[1];
+                console.log(battleState);
                 label.textContent = 'Attacker '+battleState.attacker;
             }else if(battleState.attacker=='black' || battleState.attacker=='white'){
                 battleState[r[0]] = r[1];
+                console.log(battleState);
                 if(battleState.black!='' && battleState.white!=''){
                     var left = battleState.attacker=='black' ? 'black':'white';
-                    var right = battleState.attacker=='black' ? 'white':'black';
+                    var right = left=='black' ? 'white':'black';
                     var res = resolution[left][right];
                     if(res==0){
                         label.textContent = right+' wins';
@@ -129,7 +131,6 @@
                     }
                 }
             }
-            console.log(battleState);
         }
         camQrResultTimestamp.textContent = new Date().toString();
         label.style.color = 'teal';
