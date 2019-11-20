@@ -43,7 +43,7 @@
 <hr>
 
 <h1>Reset Battle:</h1>
-<button type="button" onclick="resetBattle">Start Fight</button>
+<button type="button" id="battlebtn">Start Fight</button>
 
 
 <script type="module">
@@ -102,6 +102,7 @@
             white: '',
             attacker: ''
         };
+        camQrResult.textContent = '';
     }
 
     function setResult(label, result) {
@@ -146,6 +147,9 @@
         scanner.setInversionMode(event.target.value);
     });
 
+    document.getElementById('battlebtn').addEventListener('click', event => {
+        resetBattle();
+    });
 
 </script>
 </body>
