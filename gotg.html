@@ -119,7 +119,7 @@
                 if(battleState.black!='' && battleState.white!=''){
                     var left = battleState.attacker=='black' ? 'black':'white';
                     var right = left=='black' ? 'white':'black';
-                    var res = resolution[left][battleState[right]];
+                    var res = resolution[battleState[left]][battleState[right]];
                     if(res==0){
                         label.textContent = right+' wins';
                     }else if(res==1){
